@@ -1,0 +1,8 @@
+.background {
+    position: relative;
+    background: #fff url("https://wallpapercave.com/wp/wp2219692.jpg");  
+    width: 100%;
+    height: 800px;
+     background-size: cover; 
+    overflow: hidden;
+}

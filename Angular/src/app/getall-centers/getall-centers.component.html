@@ -1,0 +1,31 @@
+<div class="alert alert-danger" *ngIf='failure'>{{failure}}</div>
+<div class="alert alert-success" *ngIf='success'>{{success}}</div>
+
+<div class="background">
+
+<div class="container mt-3">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr class="bg-light">
+                <th>Center Id</th>
+                <th>Center Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let center of centers"  style="color: white;">
+                <td>{{center.centerId}}</td>
+                <td>{{center.centerName}}</td>
+                
+                
+                <td> <button class="btn btn-primary" (click)='updateCenter(center)'>Update</button> 
+                </td> 
+                <td> <button class="btn btn-danger" (click)='deleteCenter(center)'>Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+

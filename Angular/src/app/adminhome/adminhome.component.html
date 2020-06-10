@@ -1,0 +1,430 @@
+<div class="jumbotron">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand text-dark font-weight-bold" routerLink="/adminhome">Admin</a>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ml-5">
+                <ul class="nav nav-pills">
+                    <div class="dropdown">
+                        <li class="nav-item">
+                            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                                <div class="btn-group" role="group" >
+                                    <button id="btnGroupDrop5" type="button" class="btn btn-dark dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="false">
+                                        Diagnostic Center
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item" routerLink="/add-center">Add Center</a>
+                                        <a class="dropdown-item" routerLink="/getall-centers">Show All Diagnostic Centers</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+
+
+                    <div class="dropdown">
+                        <li class="nav-item mr-auto mt-2 mt-lg-0 ml-5">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" class="btn btn-dark dropdown-toggle" id="dropdownMenuButton2"
+                            data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                            Test
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" routerLink="/add-test">Add Test</a>
+                            <a class="dropdown-item" routerLink="/getall-tests">Show All Tests</a>
+
+                        </div>
+                        </li>
+                    </div>
+                    <div class="dropdown">
+                        <li class="nav-item mr-auto mt-2 mt-lg-0 ml-5">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" class="btn btn-dark dropdown-toggle" id="dropdownMenuButton2"
+                            data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                            Manage Appointmemts
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" routerLink="/getallappointments">Show All Appointments</a>
+
+                        </div>
+                        </li>
+                    </div>
+                </ul>
+            </ul>
+        </div>
+        
+    </nav>
+</div> 
+
+<div class="page-section">
+    <div class="container">
+        <h1>Health Tips For You</h1>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="data:image/jpeg;base64,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"
+                    title="Docmed - Free Bootstrap 4 HTML5 Healthcare Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/10/docmed-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/10/docmed-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-79154 wp-post-image lazy-loaded"
+                                alt="Free Bootstrap 4 HTML5 Healthcare Website Template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/10/docmed-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/10/docmed-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/10/docmed-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/10/docmed.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/10/docmed-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/10/docmed-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/10/docmed-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/10/docmed.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/10/docmed-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-79154 wp-post-image"
+                                    alt="Free Bootstrap 4 HTML5 Healthcare Website Template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/10/docmed-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/10/docmed-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/10/docmed-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/10/docmed.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Drink Water</h2>
+                            <div class="portfolio-entry-excerpt clr">It can help boost the number of calories you burn and boost your metabolism by around 24%-30% over a one-and-a-half-hour period.</div>
+                        </header>
+                        <div class="card-body">
+
+                        </div>
+                    </section>
+                </div>
+                <div target="_blank"
+                    href="data:image/jpeg;base64,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" class="live">
+                    <i class="ion-android-open" aria-hidden="true"></i></div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-bootstrap-4-html5-responsive-dental-website-template-dentista/"
+                    title="Dentista - Free Bootstrap 4 HTML5 Responsive Dental Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/10/dentista-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/10/dentista-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-78726 wp-post-image lazy-loaded"
+                                alt="Free Bootstrap 4 HTML5 Responsive Dental Website Template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/10/dentista-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/10/dentista-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/10/dentista-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/10/dentista.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/10/dentista-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/10/dentista-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/10/dentista-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/10/dentista.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/10/dentista-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-78726 wp-post-image"
+                                    alt="Free Bootstrap 4 HTML5 Responsive Dental Website Template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/10/dentista-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/10/dentista-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/10/dentista-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/10/dentista.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Dentist</h2>
+                            <div>
+                                Dentist is a professional free and mobile-ready dental website template for
+                                clinics, surgeons,
+                                orthodontists.
+                            </div>
+                        </header>
+                        <div class="card-body">
+
+                        </div>
+                    </section>
+                </div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-responsive-html5-bootstrap-medical-website-template-medic/"
+                    title="Medic - Free Responsive HTML5 Bootstrap Medical Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/08/medic-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/08/medic-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-76142 wp-post-image lazy-loaded"
+                                alt="free responsive HTML5 Bootstrap medical website template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/08/medic-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/08/medic-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/08/medic-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/08/medic.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/08/medic-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/08/medic-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/08/medic-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/08/medic.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/08/medic-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-76142 wp-post-image"
+                                    alt="free responsive HTML5 Bootstrap medical website template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/08/medic-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/08/medic-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/08/medic-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/08/medic.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Medic</h2>
+                            <div>
+                                Take things into your hands with Medica free health and medical website. You
+                                can use the
+                                template for plastic surgery
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-responsive-bootstrap-4-html5-pharmacy-website-template-pharma/"
+                    title="Pharma - Free Responsive Bootstrap 4 HTML5 Pharmacy Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/08/pharma-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/08/pharma-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-76056 wp-post-image lazy-loaded"
+                                alt="free responsive Bootstrap 4 HTML5 pharmacy website template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/08/pharma-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/08/pharma-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/08/pharma-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/08/pharma.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/08/pharma-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/08/pharma-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/08/pharma-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/08/pharma.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/08/pharma-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-76056 wp-post-image"
+                                    alt="free responsive Bootstrap 4 HTML5 pharmacy website template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/08/pharma-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/08/pharma-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/08/pharma-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/08/pharma.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Pharma</h2>
+                            <div>
+                                Pharma - hence the name - is a free pharmacy website template for selling
+                                medicinal drugs and
+                                other health-related products.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-bootstrap-4-html5-responsive-medical-website-template-mediplus/"
+                    title="Mediplus - Free Bootstrap 4 HTML5 Responsive Medical Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/07/mediplus-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/07/mediplus-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-75800 wp-post-image lazy-loaded"
+                                alt="Free Bootstrap 4 HTML5 Responsive Medical Website Template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/07/mediplus-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/mediplus-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/mediplus-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/mediplus.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/07/mediplus-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/mediplus-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/mediplus-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/mediplus.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/07/mediplus-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-75800 wp-post-image"
+                                    alt="Free Bootstrap 4 HTML5 Responsive Medical Website Template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/07/mediplus-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/mediplus-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/mediplus-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/mediplus.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Mediplus</h2>
+                            <div>
+                                Medi+ is a beautiful, professional, yet completely free medical website
+                                template for physicians,
+                                hospitals, clinics are involved.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-html5-bootstrap-4-medical-website-template-medico/"
+                    title="Medico - Free HTML5 Bootstrap 4 Medical Mebsite Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/07/medico-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/07/medico-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-75789 wp-post-image lazy-loaded"
+                                alt="free HTML5 Bootstrap 4 medical website template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/07/medico-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/medico-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/medico-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/medico.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/07/medico-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/medico-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/medico-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/medico.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/07/medico-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-75789 wp-post-image"
+                                    alt="free HTML5 Bootstrap 4 medical website template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/07/medico-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/medico-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/medico-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/medico.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Medino</h2>
+                            <div>
+                                Get your hands of Medino, a free medicine website template, and sort out
+                                your online presence the
+                                professional way.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+                <div target="_blank"
+                    href="http://demo.themewagon.com/preview/free-html5-bootstrap-4-medical-website-template-medico"
+                    class="live"> live Preview <i class="ion-android-open" aria-hidden="true"></i></div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-html5-bootstrap-4-medical-website-template-medisen/"
+                    title="Medisen - Free HTML5 Bootstrap 4 Medical Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/07/medisen-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/07/medisen-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-75727 wp-post-image lazy-loaded"
+                                alt="Free HTML5 Bootstrap 4 Medical Website Template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/07/medisen-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/medisen-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/medisen-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/medisen.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/07/medisen-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/medisen-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/medisen-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/medisen.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/07/medisen-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-75727 wp-post-image"
+                                    alt="Free HTML5 Bootstrap 4 Medical Website Template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/07/medisen-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/07/medisen-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/07/medisen-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/07/medisen.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Medisen</h2>
+                            <div>
+                                With Medisen, a free Bootstrap medical website template, you can speed up
+                                the process of creating
+                                an online presence for a doctor.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+                <div target="_blank"
+                    href="http://demo.themewagon.com/preview/free-html5-bootstrap-4-medical-website-template-medisen"
+                    class="live"> live Preview <i class="ion-android-open" aria-hidden="true"></i></div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-bootstrap-4-html5-medical-website-template-medcare/"
+                    title="Medcare - Free Bootstrap 4 HTML5 Medical Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/04/medcare-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/04/medcare-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-72778 wp-post-image lazy-loaded"
+                                alt=""
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/04/medcare-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/04/medcare-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/04/medcare-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/04/medcare.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/04/medcare-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/04/medcare-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/04/medcare-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/04/medcare.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/04/medcare-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-72778 wp-post-image" alt=""
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/04/medcare-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/04/medcare-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/04/medcare-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/04/medcare.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript>
+                        </figure>
+                        <header>
+                            <h2>Medcare</h2>
+                            <div>
+                                For hospitals, clinics and other medical institutions, Medcare is the free
+                                healthcare website
+                                template to go with.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+                <div target="_blank"
+                    href="http://demo.themewagon.com/preview/free-bootstrap-4-html5-medical-website-template-medcare"
+                    class="live"> live Preview <i class="ion-android-open" aria-hidden="true"></i></div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor" href="https://themewagon.com/themes/medicare/"
+                    title="Medicare - Fully Responsive Bootstrap 4 Medical Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/05/medicare1-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/05/medicare1-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-73314 wp-post-image lazy-loaded"
+                                alt=""
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/05/medicare1-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/05/medicare1-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/05/medicare1-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/05/medicare1.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/05/medicare1-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/05/medicare1-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/05/medicare1-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/05/medicare1.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/05/medicare1-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-73314 wp-post-image" alt=""
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/05/medicare1-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/05/medicare1-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/05/medicare1-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/05/medicare1.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>Medicare</h2>
+                            <div>
+                                There is no need to be lacking online presence when such amazing tools, like
+                                Medicare free
+                                hospital.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+                <div target="_blank" href="http://demo.themewagon.com/preview/medicare" class="live"> live
+                    Preview <i class="ion-android-open" aria-hidden="true"></i></div>
+            </div><!-- col -->
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 theme-card-wrap">
+                <div class="theme-card-anchor"
+                    href="https://themewagon.com/themes/free-html5-bootstrap-4-medical-website-template-drcare/"
+                    title="DrCare - Free HTML5 Bootstrap 4 Medical Website Template">
+                    <section class="card card-themes free">
+                        <figure>
+                            <img width="239" height="146"
+                                src="https://themewagon.com/wp-content/uploads/2019/03/drcare-239x146.jpg"
+                                data-lazy-type="image"
+                                data-lazy-src="https://themewagon.com/wp-content/uploads/2019/03/drcare-239x146.jpg"
+                                class="lazy img-responsive z-hover wp-image-71421 wp-post-image lazy-loaded"
+                                alt="Free HTML5 Bootstrap 4 Medical Website Template"
+                                data-lazy-srcset="https://themewagon.com/wp-content/uploads/2019/03/drcare-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/03/drcare-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/03/drcare-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/03/drcare.jpg 750w"
+                                sizes="(max-width: 239px) 100vw, 239px"
+                                srcset="https://themewagon.com/wp-content/uploads/2019/03/drcare-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/03/drcare-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/03/drcare-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/03/drcare.jpg 750w"><noscript><img
+                                    width="239" height="146"
+                                    src="https://themewagon.com/wp-content/uploads/2019/03/drcare-239x146.jpg"
+                                    class="img-responsive z-hover wp-image-71421 wp-post-image"
+                                    alt="Free HTML5 Bootstrap 4 Medical Website Template"
+                                    srcset="https://themewagon.com/wp-content/uploads/2019/03/drcare-239x146.jpg 239w, https://themewagon.com/wp-content/uploads/2019/03/drcare-336x206.jpg 336w, https://themewagon.com/wp-content/uploads/2019/03/drcare-30x18.jpg 30w, https://themewagon.com/wp-content/uploads/2019/03/drcare.jpg 750w"
+                                    sizes="(max-width: 239px) 100vw, 239px" /></noscript> </figure>
+                        <header>
+                            <h2>DrCare</h2>
+                            <div>
+                                DrCare is a multi-purpose free healthcare website template which you can use
+                                for building
+                                hospital, clinic, doctor pages to name a few.
+                            </div>
+                        </header>
+                        <div class="card-body">
+                        </div>
+                    </section>
+                </div>
+                <div target="_blank"
+                    href="http://demo.themewagon.com/preview/free-html5-bootstrap-4-medical-website-template-drcare"
+                    class="live"> live Preview <i class="ion-android-open" aria-hidden="true"></i></div>
+            </div><!-- col -->
+        </div><!-- row -->
+        <div class="text-center">
+        </div>
+    </div><!-- container-fluid -->
+</div>
+<router-outlet></router-outlet>
+

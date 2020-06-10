@@ -1,0 +1,46 @@
+<div class="jumbotron">
+
+    <div class="col-md-4 offset-md-1 mt-4">
+      <h1 style="font-family: sans-serif;text-align: center;color: black;">Please Login</h1>
+      <form #loginForm='ngForm' (ngSubmit)='login(loginForm)'>
+        <div class="form-group">
+          <label for="email" style="color:black; font-size:22px;">Email</label>
+          <input type="email" name="email" id="email" required placeholder="Enter Your Email Id" minlength="8" required #email='ngModel' ngModel
+            class="form-control" required email pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
+          <div *ngIf='email.touched && email.invalid'>
+            <div class="alert alert-danger" *ngIf='email.errors.required'>
+              *This Field is Mandatory
+            </div>
+            <div class="alert alert-danger" *ngIf='email.errors.minlength'>
+              Minimum 8 characters are required
+            </div>
+            <div class="alert alert-danger" *ngIf='email.errors.email'>
+              This Field Accepts Only Email
+            </div>
+            <div class="alert alert-danger" *ngIf='email.errors.pattern'>
+              This Field accepts the pattern of type "qwerty@gmail.com"
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" style="color:black; font-size:22px;">Password</label>
+            <input type="password" name="password" id="password" required placeholder="Enter Your Password" #password='ngModel' ngModel
+              class="form-control" required password pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}$">
+            <div *ngIf='password.invalid && password.touched'>
+              <div class="alert alert-danger" *ngIf='password.errors.required'>
+                *This Field Is Mandatory
+              </div>
+              <div class="alert alert-danger" *ngIf='password.errors.pattern'>
+                *Minimum 6 characters,should include one uppercase,
+                one lowercase,and one number
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-success float-right"> Submit
+          </button>
+  
+          <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+          <div class="alert alert-danger" *ngIf='error'>{{error}}</div>
+  
+        </div>
+      </form>
+    </div>

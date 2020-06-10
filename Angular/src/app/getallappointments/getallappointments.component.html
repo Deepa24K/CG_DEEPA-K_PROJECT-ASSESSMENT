@@ -1,0 +1,48 @@
+<div class="background">
+    <div class="alert alert-success" *ngIf='discription'>{{discription}}
+        <span class="float-right">
+            <button (click)='deleteMessage()'>&times;</button>
+        </span>
+    </div>
+
+    <table class="table table-bordered table dark">
+        <thead>
+            <tr class="bg-light">
+                <th>Appointment ID</th>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Test ID</th>
+                <th>Test Name</th>
+                <th>Center ID</th>
+                <th>Center Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointments" style="color: white;">
+                <td>{{appointment.appointmentId}}</td>
+                <td>{{appointment.userId}}</td>
+                <td>{{appointment.userName}}</td>
+                <td>{{appointment.testId}}</td>
+                <td>{{appointment.testName}}</td>
+                <td>{{appointment.centerId}}</td>
+                <td>{{appointment.centerName}}</td>
+                <td>{{appointment.appointmentDate}}</td>
+                <td>{{appointment.appointmentTime}}</td>
+                <td>{{appointment.status}}</td>
+
+                <td>
+                    <button class="btn btn-danger ml-2" (click)='deleteAppointment(appointment)'>
+                        Delete
+                    </button>
+                    <button class="btn btn-success ml-2" (click)='confirmappointment(appointment)'>
+                        Confirm
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
